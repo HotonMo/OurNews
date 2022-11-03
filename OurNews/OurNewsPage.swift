@@ -21,8 +21,9 @@ struct CardModifier: ViewModifier {
 struct IconModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
+            .clipShape(Circle())
             .aspectRatio(contentMode: .fit)
-            .frame(width: 75)
+            .frame(width: 70)
             .padding(.all, 20)
           
     }
@@ -80,9 +81,9 @@ struct ButtonModifier: ViewModifier {
 struct card{
     var id = UUID()
     let currentDateTime = Date()
-    var gender: String
-    var Name : String
-    var message : String
+    @State var gender: String
+    @State var Name : String
+    @State var message : String
 }
 
 
@@ -102,6 +103,7 @@ struct OurNewsPage: View {
     var body: some View {
         
         let cardList:[card] = [
+            card(gender: AddedGender, Name: AddedName ,message: AddedMessage),
             card(gender: AddedGender, Name: AddedName ,message: AddedMessage),
 
     ]

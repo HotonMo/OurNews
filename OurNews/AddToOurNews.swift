@@ -12,45 +12,44 @@ import SwiftUI
 
 struct AddToOurNews: View {
     
-    @State var message = " "
-    @State var Name = "hoton"
-    @State var Gender = "FemaleProfile"
+    @State var message :String = " "
+    @State var Name :String = "hoton"
+    @State var Gender :String = "FemaleProfile"
     
     @Binding var isPresentedSheet : Bool
   
     var body: some View {
         
-        
-        VStack{
-            
-            TextField("write here", text: $message)
-                .frame(height: 300 )
-                .background(Color("appbackground"))
+        NavigationView{
+            VStack{
                 
-
-        Button{
-          
+                TextField("write here", text: $message)
+                    .frame(height: 300 )
+                    .background(Color("appbackground"))
+                
+                
+                NavigationLink{
+                    
+                    
+                    // OurNewsPage(AddedMessage: $message)
+                    OurNewsPage(AddedMessage: $message, AddedName:$Name, AddedGender:$Gender)
+                    //  isPresentedSheet = false
+                    
+                    
+                }label:{
+                    Text("Add")
+                    .frame(maxWidth: .infinity)
+                               .padding()
+                    .foregroundColor(.white)
+                    .background(Color("textcolor"))
+                    .cornerRadius(8.0)
+                }
+                
+            }
+        }}
+        
+    }
     
-           // OurNewsPage(AddedMessage: $message)
-            OurNewsPage(AddedMessage: $message, AddedName:$Name, AddedGender:$Gender)
-            isPresentedSheet = false
-            
-
-        }
-    label:{
-        Text("Add")
-            .frame(maxWidth: .infinity)
-            .padding()
-            .foregroundColor(.white)
-            .background(Color("textcolor"))
-            .cornerRadius(8.0)
-    }
- 
-        
-    }.padding()
-        
-    }
-    }
 
 struct AddToOurNewsPreviews: PreviewProvider {
     static var previews: some View {
