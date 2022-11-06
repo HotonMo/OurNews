@@ -104,7 +104,10 @@ struct OurNewsPage: View {
         
         let cardList:[card] = [
             card(gender: AddedGender, Name: AddedName ,message: AddedMessage),
-            card(gender: AddedGender, Name: AddedName ,message: AddedMessage),
+            card(gender: "FemaleProfile", Name: "Einas" ,message: "Eid fiter celebration"),
+            card(gender: "FemaleProfile", Name: "Hoton" ,message: "nice application"),
+            card(gender: "MaleProfile", Name: "Ahmed" ,message: "hello dear neighbors :)")
+           
 
     ]
     
@@ -115,7 +118,7 @@ struct OurNewsPage: View {
                 Button{
                     isPresentedSheet = true
                 }
-            label:{Text("Add")}
+            label:{Text("Add post")}
             .modifier(ButtonModifier())
                 
             ScrollView(.vertical){
@@ -167,8 +170,8 @@ struct OurNewsPage: View {
 struct OurNewsPage_Previews: PreviewProvider {
   
     static var previews: some View {
-        OurNewsPage(AddedMessage: Binding<String>.constant("ff"),
-                    AddedName: Binding<String>.constant("h"),AddedGender: Binding<String>.constant("MaleProfile"))
+        OurNewsPage(AddedMessage: Binding<String>.constant("excavtion on the main street"),
+                    AddedName: Binding<String>.constant("Rakan"),AddedGender: Binding<String>.constant("MaleProfile"))
        
     }
 }

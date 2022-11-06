@@ -11,7 +11,8 @@ import SwiftUI
 struct OurNewsApp: App {
     var body: some Scene {
         WindowGroup {
-            //OurNewsPage()
+            OurNewsPage(AddedMessage: Binding<String>.constant("excavtion on the main street"),
+                        AddedName: Binding<String>.constant("Rakan"),AddedGender: Binding<String>.constant("MaleProfile"))
         }
     }
 }
